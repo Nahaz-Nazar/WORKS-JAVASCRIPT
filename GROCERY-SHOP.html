@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+<h1>Grocery Shop Bill</h1>
+
+    <p id="rice"></p>
+    <p id="sugar"></p>
+    <p id="wheat"></p>
+    <p id="total"></p>
+    <p id="updated"></p> 
+    
+<script>
+
+let riceName = "Rice";
+let sugarName = "Sugar";
+let wheatName = "Wheat";
+
+let ricePrice = 50;
+let sugarPrice = 40;
+let wheatPrice = 60;
+
+let riceQty = 2;
+let sugarQty = 3;
+let wheatQty = 1;
+
+console.log(riceName + " Cost = " + (ricePrice * riceQty));
+console.log(sugarName + " Cost = " + (sugarPrice * sugarQty));
+console.log(wheatName + " Cost = " + (wheatPrice * wheatQty));
+
+let totalBill = (ricePrice * riceQty) +
+                (sugarPrice * sugarQty) +
+                (wheatPrice * wheatQty);
+
+console.log("Total Bill = " + totalBill);
+
+sugarQty = 5;
+
+totalBill = (ricePrice * riceQty) +
+            (sugarPrice * sugarQty) +
+            (wheatPrice * wheatQty);
+
+console.log("Updated Total Bill = " + totalBill);
+
+</script>
+
+</body>
+</html>
