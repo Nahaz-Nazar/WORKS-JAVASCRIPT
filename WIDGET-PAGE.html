@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Statistics Widget</title>
+</head>
+<body>
+  <h2>Statistics Widget</h2>
+  <button onclick="showStats()">Show Stats</button>
+  <p id="result"></p>
+
+  <script>
+    function showStats() {
+      let randomNumber = Math.floor(Math.random() * 100) + 1;
+      let userScore = "75";
+      let scoreNumber = Number(userScore);
+      let difference = randomNumber - scoreNumber;
+      let sqrtValue = Math.round(Math.sqrt(scoreNumber));
+      let piValue = Math.PI;
+      let implicitValue = "50" * 2;
+
+      document.getElementById("result").innerHTML =
+        "Random Number: " + randomNumber + "<br>" +
+        "Difference: " + difference + "<br>" +
+        "Rounded Square Root: " + sqrtValue + "<br>" +
+        "Pi: " + piValue + "<br>" +
+        "Implicit Conversion Result: " + implicitValue;
+    }
+  </script>
+</body>
+</html>
