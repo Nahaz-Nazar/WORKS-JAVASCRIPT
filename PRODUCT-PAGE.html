@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const productNames = ["Apple", "Banana", "Orange"];
+const productPrices = [50, 30, 70];
+
+let productList = [];
+
+for (let i = 0; i < productNames.length; i++) {
+  productList.push(`Product: ${productNames[i]} - Price: ${productPrices[i]}`);
+}
+
+// Display all products
+console.log("All products:");
+for (let item of productList) {
+  console.log(item);
+}
+
+// Filter products with price > 50
+console.log("Products with price > 50:");
+for (let item of productList) {
+  let price = Number(item.match(/\d+/)[0]);
+  if (price > 50) {
+    console.log(item);
+  }
+}
+
+// Add new product
+productList.push("Product: Watermelon - Price: 80");
+
+// Display updated list
+console.log("Updated product list:");
+for (let item of productList) {
+  console.log(item);
+}
+    </script>
+</body>
+</html>
