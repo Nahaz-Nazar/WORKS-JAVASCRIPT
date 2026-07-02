@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>result page</title>
+</head>
+<body>
+    <script>
+        const students = [
+  { name: "Akhil", score: 85 },
+  { name: "Babu", score: 45 },
+  { name: "Ciya", score: 92 }
+];
+
+const allNames = students.map(s => s.name);
+console.log("All names:", allNames);
+
+const highScores = students.filter(s => s.score > 60).map(s => s.name);
+console.log("Above 60:", highScores);
+
+const totalScore = students.reduce((sum, s) => sum + s.score, 0);
+console.log("Total score:", totalScore);
+
+const allPassed = students.every(s => s.score > 35);
+console.log("All passed:", allPassed);
+
+const hasHighScore = students.some(s => s.score > 90);
+console.log("Anyone above 90:", hasHighScore);
+
+const sortedStudents = [...students].sort((a, b) => b.score - a.score);
+console.log("Sorted:", sortedStudents);
+    </script>
+</body>
+</html>
