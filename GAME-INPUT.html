@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guess Game</title>
+</head>
+<body>
+    <h2>Guess the Number Game</h2>
+
+    <script>
+        for (let chance = 1; chance <= 5; chance++) {
+            let guess = parseInt(prompt("Enter a number between 1 and 5:"));
+
+            let word = "";
+            switch (guess) {
+                case 1:
+                    word = "One";
+                    break;
+                case 2:
+                    word = "Two";
+                    break;
+                case 3:
+                    word = "Three";
+                    break;
+                case 4:
+                    word = "Four";
+                    break;
+                case 5:
+                    word = "Five";
+                    break;
+                default:
+                    word = "Invalid";
+            }
+
+            if (guess < 1 || guess > 5) {
+                alert("Invalid input");
+                continue;
+            }
+
+            alert("You entered: " + word);
+
+            if (guess === 3) {
+                alert("You guessed it right!");
+                break;
+            } else {
+                alert("Wrong guess. Try again.");
+            }
+        }
+
+        if (guess !== 3) {
+            alert("Game over");
+        }
+    </script>
+</body>
+</html>
