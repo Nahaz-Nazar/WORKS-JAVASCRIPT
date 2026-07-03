@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Calculator</title>
+</head>
+<body>
+    <h2>Grocery Store Calculator</h2>
+
+    <script>
+        let purchaseCount = 0;
+
+        while (purchaseCount < 5) {
+            let code = parseInt(prompt("Enter product code (1, 2, 3):"));
+            let quantity = parseInt(prompt("Enter quantity:"));
+
+            if (isNaN(code) || isNaN(quantity) || quantity <= 0) {
+                alert("Invalid input. Please enter valid values.");
+                continue;
+            }
+
+            let pricePerItem;
+            let productName;
+
+            switch (code) {
+                case 1:
+                    productName = "Apple";
+                    pricePerItem = 30;
+                    break;
+                case 2:
+                    productName = "Banana";
+                    pricePerItem = 10;
+                    break;
+                case 3:
+                    productName = "Mango";
+                    pricePerItem = 50;
+                    break;
+                default:
+                    alert("Invalid product code. Skipping this purchase.");
+                    continue;
+            }
+
+            let total = pricePerItem * quantity;
+
+            if (total > 100) {
+                alert(`${productName} - Total: ₹${total} | High purchase`);
+            } else {
+                alert(`${productName} - Total: ₹${total} | Normal purchase`);
+            }
+
+            purchaseCount++;
+        }
+
+        alert("5 purchases completed.");
+    </script>
+</body>
+</html>
