@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Filtering System</title>
+</head>
+<body>
+    <script>
+        function analyzeComment(comment) {
+            const cleanedComment = comment.replace(/\b(bad|ugly|stupid)\b/gi, "***");
+            const numberCount = (comment.match(/\d/g) || []).length;
+            const capitalizedWordCount = (comment.match(/\b[A-Z][a-zA-Z]*\b/g) || []).length;
+
+            return `Cleaned comment: ${cleanedComment}\nNumber count: ${numberCount}\nCapitalized word count: ${capitalizedWordCount}`;
+        }
+
+        const comment = "I think this movie was BAD and 100% Stupid! But the Acting was Amazing and 3 actors were great.";
+        console.log(analyzeComment(comment));
+    </script>
+</body>
+</html>
