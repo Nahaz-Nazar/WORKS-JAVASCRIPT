@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON Feedback</title>
+</head>
+<body>
+  <script>
+    const jsonText = '{"name":"Alice","feedback":"Thank you for your help"}';
+
+    const checkFeedback = (data) => {
+      try {
+        const userFeedback = JSON.parse(data);
+        const message = userFeedback.feedback.toLowerCase();
+
+        if (message.includes("thank")) {
+          console.log("Positive feedback received");
+        } else {
+          console.log("Feedback noted");
+        }
+      } catch (error) {
+        console.error("Error: " + error.message);
+      }
+    };
+
+    checkFeedback(jsonText);
+  </script>
+</body>
+</html>
