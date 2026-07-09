@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feedback Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    input, textarea {
+      display: block;
+      width: 260px;
+      margin-bottom: 10px;
+      padding: 8px;
+    }
+
+    button {
+      padding: 8px 12px;
+    }
+
+    #display {
+      margin-top: 20px;
+      color: black;
+    }
+
+    #message {
+      color: green;
+      display: none;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Feedback Form</h2>
+
+  <form id="feedbackForm">
+    <label>Name:</label>
+    <input type="text" id="name" required />
+
+    <label>Feedback:</label>
+    <textarea id="feedback" rows="4" required></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="display"></div>
+  <p id="message">Thanks for your feedback!</p>
+
+  <script>
+    let form = document.getElementById('feedbackForm');
+    let nameInput = document.getElementById('name');
+    let feedbackInput = document.getElementById('feedback');
+    let display = document.getElementById('display');
+    let message = document.getElementById('message');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      let name = nameInput.value;
+      let feedback = feedbackInput.value;
+
+      display.innerHTML = '<strong>Name:</strong> ' + name + '<br><strong>Feedback:</strong> ' + feedback;
+
+      message.style.display = 'block';
+
+      setTimeout(function () {
+        message.style.display = 'none';
+      }, 5000);
+    });
+
+    display.addEventListener('mouseenter', function () {
+      display.style.color = 'blue';
+    });
+
+    display.addEventListener('mouseleave', function () {
+      display.style.color = 'black';
+    });
+  </script>
+</body>
+</html>
